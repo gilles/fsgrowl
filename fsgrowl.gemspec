@@ -3,28 +3,28 @@ $:.push File.expand_path("../lib", __FILE__)
 require "fsgrowl/version"
 
 Gem::Specification.new do |s|
-  s.name        = "fsgrowl"
-  s.version     = Fsgrowl::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = "http://rubygems.org/gems/fsgrowl"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.name = "fsgrowl"
+  s.version = Fsgrowl::VERSION
+  s.platform = Gem::Platform::RUBY
+  s.authors = ["Gilles Devaux"]
+  s.email = ["TODO: Write your email address"]
+  s.homepage = "http://rubygems.org/gems/fsgrowl"
+  s.summary = "Growl notifier for Formspring.me"
+  s.description = "Growl notifier for Formspring.me"
 
   s.rubyforge_project = "fsgrowl"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  s.files = `git ls-files`.split("\n")
+  s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.require_paths = %w(lib)
 
   s.bindir = 'bin'
-  s.executables=['fsgrowl']
+  s.executables=%w(fsgrowl)
 
   s.add_dependency "nokogiri"
   s.add_dependency "json"
-  s.add_dependency "ruby-growl"
+  s.add_dependency "daemons"
 
   s.add_development_dependency "rake"
 

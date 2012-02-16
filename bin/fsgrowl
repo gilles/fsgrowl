@@ -18,9 +18,11 @@
 #
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 
-require "rubygems"
-require "fsgrowl"
-require "yaml"
+require 'rubygems'
+require 'fsgrowl'
+require 'yaml'
+require 'daemons'
+require 'optparse'
 
 conf_file = "#{ENV['HOME']}/.fsgrowl"
 if File.exists?(conf_file)
@@ -32,9 +34,15 @@ end
 
 conf = YAML.load_file(conf_file)
 
-#TODO Daemonize
-fsg = Fsgrowl::Fsgrowl.new(conf['username'], conf['password'])
-while true
-  fsg.check
-  sleep(30)
+@fsg = Fsgrowl::Fsgrowl.new(conf['username'], conf['password'])
+
+def run
+  loop do
+    @fsg.check
+    sleep(30)
+  end
+end
+
+Daemons.run_proc('fsgrowl', {:multiple => false, :app_name => 'fsgrowl'}) do
+  run
 end

@@ -2,17 +2,17 @@ PATH
   remote: .
   specs:
     fsgrowl (0.1.0)
+      daemons
       json
       nokogiri
-      ruby-growl
 
 GEM
   remote: http://rubygems.org/
   specs:
+    daemons (1.1.4)
     json (1.6.5)
     nokogiri (1.5.0)
     rake (0.8.7)
-    ruby-growl (3.0)
 
 PLATFORMS
   ruby
