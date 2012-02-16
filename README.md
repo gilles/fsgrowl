@@ -1,10 +1,8 @@
-Formspring Growl Notifier
-======
+# Formspring Growl Notifier
 
 Provides Growl notifications for Formspring
 
-Installation
-======
+## Installation
 
 Edit ~/.fsgrowl
 
@@ -13,16 +11,15 @@ Edit ~/.fsgrowl
 
 The file will be chmod to 0600
 
-Running
-======
+## Running
+
 just type `fsgrowl` in a terminal
 
-TODO
-=====
+## TODO
+
 Daemonize
 
-CREDITS
-=====
+## CREDITS
 
 https://github.com/svoop/autotest-growl
 For the growl binaries
